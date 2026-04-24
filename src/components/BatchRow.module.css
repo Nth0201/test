@@ -1,0 +1,131 @@
+.row {
+  background: var(--c-surface);
+  border-radius: 14px;
+  padding: 14px 16px;
+  box-shadow: var(--shadow-sm);
+  border: 1.5px solid var(--c-border);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  /* Slide-in animation on mount */
+  animation: slideIn 0.3s var(--ease-smooth) both;
+  opacity: 0;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* All-tails variant */
+.rowAllTails {
+  background: var(--c-danger-dim);
+  border-color: rgba(220, 38, 38, 0.25);
+}
+
+/* Meta row */
+.meta {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.batchNum {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--c-text-3);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  min-width: 28px;
+}
+
+.summary {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--c-text-2);
+  display: flex;
+  gap: 4px;
+  align-items: center;
+}
+
+.headsCount {
+  color: #B45309;
+}
+
+.tailsCount {
+  color: var(--c-text-3);
+}
+
+.sep {
+  color: var(--c-text-3);
+}
+
+.stopBadge {
+  margin-left: auto;
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--c-danger);
+  background: rgba(220, 38, 38, 0.1);
+  padding: 3px 8px;
+  border-radius: 999px;
+  letter-spacing: 0.2px;
+  white-space: nowrap;
+}
+
+/* Coin grid */
+.coins {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+
+/* Coin sizes */
+.coins--lg .coin { width: 34px; height: 34px; font-size: 13px; }
+.coins--md .coin { width: 28px; height: 28px; font-size: 11px; }
+.coins--sm .coin { width: 22px; height: 22px; font-size: 9px; }
+
+/* Individual coin chip */
+.coin {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  font-weight: 800;
+  color: #fff;
+  flex-shrink: 0;
+  letter-spacing: 0;
+
+  /* Pop-in animation staggered by --i */
+  animation: popIn 0.2s var(--ease-bounce) both;
+  animation-delay: calc(var(--i) * 28ms);
+  opacity: 0;
+}
+
+@keyframes popIn {
+  from {
+    opacity: 0;
+    transform: scale(0.4);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.coinH {
+  background: var(--c-heads-bg);
+  box-shadow: 0 2px 4px rgba(245, 158, 11, 0.4);
+}
+
+.coinT {
+  background: var(--c-tails-bg);
+  box-shadow: 0 1px 3px rgba(0,0,0,0.15);
+}
