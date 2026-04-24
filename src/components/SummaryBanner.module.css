@@ -1,0 +1,80 @@
+.banner {
+  border-radius: 14px;
+  padding: 16px 18px;
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  border: 1.5px solid transparent;
+  animation: fadeUp 0.4s var(--ease-smooth) both;
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.bannerDone {
+  background: var(--c-success-dim);
+  border-color: rgba(5, 150, 105, 0.2);
+}
+
+.bannerEarly {
+  background: var(--c-danger-dim);
+  border-color: rgba(220, 38, 38, 0.2);
+}
+
+.icon {
+  font-size: 26px;
+  line-height: 1;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.content {
+  flex: 1;
+  min-width: 0;
+}
+
+.headline {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--c-text-1);
+  margin-bottom: 12px;
+}
+
+.stats {
+  display: flex;
+  align-items: center;
+  gap: 0;
+}
+
+.stat {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+}
+
+.statValue {
+  font-size: 22px;
+  font-weight: 800;
+  color: var(--c-text-1);
+  letter-spacing: -0.5px;
+  line-height: 1.1;
+}
+
+.statLabel {
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--c-text-3);
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+}
+
+.divider {
+  width: 1px;
+  height: 32px;
+  background: var(--c-border);
+  flex-shrink: 0;
+}
